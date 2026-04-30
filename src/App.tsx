@@ -331,7 +331,7 @@ const App = () => {
               <CheckCircle className="w-3.5 h-3.5" /> ANÁLISE DE ADERÊNCIA · CORTE 13/01/2026
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[40px] font-black mb-6 tracking-tight leading-tight text-slate-900">
-              Validação da Base de <span className="text-emerald-600">Elegíveis</span>
+              Validação da Base de <span className="text-emerald-600">Elegíveis até 13/01/2026</span>
             </h2>
             <p className="text-slate-500 text-base md:text-lg font-medium leading-relaxed">
               Cruzamos a base real de ganhadores com a lista oficial comunicada, validando cada CPF.
@@ -392,7 +392,7 @@ const App = () => {
                   <span className="w-2 h-2 rounded-full bg-blue-500"></span>
                   <p className="text-blue-600 text-[10px] font-bold uppercase tracking-widest">Lista oficial comunicada</p>
                 </div>
-                <p className="text-5xl md:text-[56px] font-black text-slate-900 leading-none mb-3 tracking-tight">71</p>
+                <p className="text-5xl md:text-[56px] font-black text-slate-900 leading-none mb-3 tracking-tight">72</p>
                 <p className="text-slate-500 text-sm font-medium leading-relaxed mb-5">Participantes incluídos na lista de premiação enviada aos canais.</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-full text-[11px] font-bold text-slate-600">
