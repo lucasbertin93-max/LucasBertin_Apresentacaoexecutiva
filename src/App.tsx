@@ -90,7 +90,7 @@ const App = () => {
     },
     {
       title: 'Painel do Dono de Lotérica',
-      count: 3,
+      count: 2,
       items: [
         { type: 'fix', text: 'Correção front Dono de Lotérica (home, metas e performance)' },
         { type: 'fix', text: 'Modal de vendas registradas com tamanho distorcido' },
@@ -209,7 +209,7 @@ const App = () => {
                 Ver Aderência <ArrowDown className="w-3 h-3 -rotate-[135deg]" />
               </span>
               <div className="mt-auto">
-                <h3 className="text-4xl md:text-5xl font-black text-slate-900 leading-none mb-3 tracking-tight truncate">80</h3>
+                <h3 className="text-4xl md:text-5xl font-black text-slate-900 leading-none mb-3 tracking-tight truncate">66</h3>
                 <p className="text-amber-700 font-bold text-[11px] uppercase tracking-widest mb-1 truncate">Premiados</p>
                 <p className="text-amber-600/80 text-xs truncate">Total de elegíveis identificados</p>
               </div>
@@ -326,63 +326,127 @@ const App = () => {
       {/* VALIDAÇÃO DE ELEGIBILIDADE */}
       <section id="eligibility" className="py-24 bg-white border-t border-slate-100 shrink-0">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold mb-6">
-              <CheckCircle className="w-3.5 h-3.5" /> ANÁLISE DE ADERÊNCIA · CORTE 20/02/2026
+              <CheckCircle className="w-3.5 h-3.5" /> ANÁLISE DE ADERÊNCIA · CORTE 13/01/2026
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[40px] font-black mb-6 tracking-tight leading-tight text-slate-900">
               Validação da Base de <span className="text-emerald-600">Elegíveis</span>
             </h2>
             <p className="text-slate-500 text-base md:text-lg font-medium leading-relaxed">
-              Cruzamos a base de participantes comunicados com o banco de dados aplicando todas as regras de elegibilidade. O resultado confirma a robustez do processo, com uma oportunidade pontual de ajuste fino.
+              Cruzamos a base real de ganhadores com a lista oficial comunicada, validando cada CPF.
+              O resultado consolida <span className="font-bold text-slate-700">87,9% de acurácia</span> — uma base sólida com ajustes pontuais já mapeados.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
-            {/* Card: Ganhadores Aderentes */}
-            <div className="p-8 md:p-10 bg-emerald-50 rounded-[32px] border border-emerald-100">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mb-6">
-                <CheckCircle className="w-6 h-6" />
+          {/* Container principal unificado */}
+          <div className="bg-slate-50/70 p-6 md:p-10 rounded-[40px] border border-slate-100">
+
+            {/* Bloco superior: comparação cruzada */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-5 mb-6">
+
+              {/* Esquerda: Base Real */}
+              <div className="bg-white p-7 rounded-[28px] border border-slate-100 shadow-[0_2px_16px_rgba(0,0,0,0.02)]">
+                <div className="flex items-center gap-2 mb-5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <p className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest">Base real de ganhadores</p>
+                </div>
+                <p className="text-5xl md:text-[56px] font-black text-slate-900 leading-none mb-3 tracking-tight">66</p>
+                <p className="text-slate-500 text-sm font-medium leading-relaxed mb-5">Ganhadores identificados após aplicação integral das regras de elegibilidade.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-full text-[11px] font-bold text-slate-600">
+                    65 Operadores
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-full text-[11px] font-bold text-slate-600">
+                    1 Proprietário
+                  </span>
+                </div>
               </div>
-              <p className="text-emerald-700 font-bold text-[10px] md:text-xs uppercase mb-4 tracking-widest">100% Aderentes</p>
-              <p className="text-5xl md:text-[56px] font-black mb-2 leading-none tracking-tight text-slate-900">71</p>
-              <p className="text-slate-600 text-sm font-medium">Ganhadores validados que atingiram integralmente as metas estipuladas.</p>
+
+              {/* Centro: Match (destaque) */}
+              <div className="relative bg-gradient-to-br from-emerald-600 to-emerald-700 p-7 rounded-[28px] text-white shadow-[0_8px_32px_rgba(16,185,129,0.25)] overflow-hidden">
+                <div className="absolute -top-8 -right-8 w-40 h-40 rounded-full bg-white/5"></div>
+                <div className="absolute -bottom-12 -left-12 w-44 h-44 rounded-full bg-white/5"></div>
+                <div className="relative">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur mb-5">
+                    <CheckCircle className="w-3.5 h-3.5" />
+                    <p className="text-white text-[10px] font-bold uppercase tracking-widest">Correspondência por CPF</p>
+                  </div>
+                  <p className="text-5xl md:text-[56px] font-black leading-none mb-3 tracking-tight">58</p>
+                  <p className="text-emerald-50/90 text-sm font-medium leading-relaxed mb-6">CPFs validados em ambas as bases — premiação correta confirmada.</p>
+                  <div className="bg-white/15 backdrop-blur rounded-2xl p-4 border border-white/10">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-100">Acurácia</span>
+                      <span className="text-2xl font-black">87,9%</span>
+                    </div>
+                    <div className="w-full bg-white/15 h-1.5 rounded-full overflow-hidden">
+                      <div className="bg-white h-full rounded-full" style={{ width: '87.9%' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Direita: Lista Comunicada */}
+              <div className="bg-white p-7 rounded-[28px] border border-slate-100 shadow-[0_2px_16px_rgba(0,0,0,0.02)]">
+                <div className="flex items-center gap-2 mb-5">
+                  <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                  <p className="text-blue-600 text-[10px] font-bold uppercase tracking-widest">Lista oficial comunicada</p>
+                </div>
+                <p className="text-5xl md:text-[56px] font-black text-slate-900 leading-none mb-3 tracking-tight">71</p>
+                <p className="text-slate-500 text-sm font-medium leading-relaxed mb-5">Participantes incluídos na lista de premiação enviada aos canais.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-full text-[11px] font-bold text-slate-600">
+                    Validação por CPF
+                  </span>
+                </div>
+              </div>
             </div>
 
-            {/* Card: Acuracidade */}
-            <div className="p-8 md:p-10 bg-[#0f172a] rounded-[32px] text-white">
-              <p className="text-blue-400 font-bold text-[10px] md:text-xs uppercase mb-4 tracking-widest">Acuracidade da Lista</p>
-              <p className="text-5xl md:text-[56px] font-black mb-2 leading-none tracking-tight">88,75%</p>
-              <p className="text-slate-400 text-sm font-medium">Dos elegíveis foram corretamente premiados na lista oficial de contemplados.</p>
-              <div className="mt-6 w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                <div className="bg-emerald-500 h-full rounded-full" style={{ width: '88.75%' }}></div>
-              </div>
-            </div>
+            {/* Bloco inferior: ajustes mapeados */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
 
-            {/* Card: Oportunidade */}
-            <div className="p-8 md:p-10 bg-amber-50 rounded-[32px] border border-amber-100">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center mb-6">
-                <Info className="w-6 h-6" />
+              {/* Inclusões pendentes */}
+              <div className="bg-white p-6 rounded-[24px] border border-slate-100 flex items-start gap-5 shadow-[0_2px_16px_rgba(0,0,0,0.02)]">
+                <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 border border-amber-100">
+                  <Award className="w-6 h-6" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-baseline gap-3 mb-1">
+                    <p className="text-3xl md:text-4xl font-black text-slate-900 leading-none tracking-tight">8</p>
+                    <p className="text-amber-600 font-black text-sm">12,1%</p>
+                  </div>
+                  <p className="text-amber-700 font-bold text-[10px] uppercase tracking-widest mb-2">Inclusões pendentes</p>
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed">Ganhadores elegíveis sem correspondência na lista — passíveis de inclusão retroativa.</p>
+                </div>
               </div>
-              <p className="text-amber-700 font-bold text-[10px] md:text-xs uppercase mb-4 tracking-widest">Oportunidade de Ajuste</p>
-              <div className="flex items-end gap-3 mb-2">
-                <p className="text-5xl md:text-[56px] font-black leading-none tracking-tight text-slate-900">9</p>
-                <p className="text-amber-700 font-black text-lg md:text-xl mb-2">~11,25%</p>
+
+              {/* Em verificação */}
+              <div className="bg-white p-6 rounded-[24px] border border-slate-100 flex items-start gap-5 shadow-[0_2px_16px_rgba(0,0,0,0.02)]">
+                <div className="w-12 h-12 rounded-2xl bg-slate-100 text-slate-600 flex items-center justify-center shrink-0 border border-slate-200">
+                  <Search className="w-6 h-6" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-baseline gap-3 mb-1">
+                    <p className="text-3xl md:text-4xl font-black text-slate-900 leading-none tracking-tight">14</p>
+                    <p className="text-slate-500 font-black text-sm">em revisão</p>
+                  </div>
+                  <p className="text-slate-600 font-bold text-[10px] uppercase tracking-widest mb-2">Notificações sob verificação</p>
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed">Constam na lista comunicada sem premiação registrada — regularização em curso.</p>
+                </div>
               </div>
-              <p className="text-slate-600 text-sm font-medium">Participantes que atingiram as metas porém ficaram fora da lista de premiação — passíveis de inclusão retroativa.</p>
             </div>
           </div>
 
-          {/* Insight */}
-          <div className="p-8 md:p-10 bg-slate-50 rounded-[32px] border border-slate-100">
+          {/* Leitura executiva */}
+          <div className="mt-6 p-8 md:p-10 bg-slate-900 rounded-[32px] text-white">
             <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="p-3 md:p-4 bg-blue-100 text-blue-600 rounded-2xl shrink-0">
+              <div className="p-3 md:p-4 bg-white/5 text-emerald-400 rounded-2xl shrink-0 border border-white/10">
                 <ShieldAlert className="w-5 h-5 md:w-6 md:h-6" />
               </div>
               <div className="min-w-0">
-                <p className="font-black text-slate-900 text-lg md:text-xl mb-2 tracking-tight">Leitura executiva</p>
-                <p className="text-slate-600 leading-relaxed font-medium text-sm md:text-base">
-                  A validação cruzada confirma que <span className="font-black text-slate-900">100% dos 71 contemplados</span> são legítimos e aderentes às regras. A análise apontou ainda <span className="font-black text-slate-900">9 participantes adicionais</span> (~11,25%) que cumpriram os critérios mas não constam na lista oficial — uma divergência circunscrita, com causa-raiz já mapeada e endereçável dentro do plano de ação proposto.
+                <p className="font-black text-white text-lg md:text-xl mb-2 tracking-tight">Leitura executiva</p>
+                <p className="text-slate-300 leading-relaxed font-medium text-sm md:text-base">
+                  O cruzamento por CPF confirma <span className="font-black text-white">87,9% de acurácia</span> — 58 dos 66 ganhadores reais foram corretamente identificados e comunicados. Os <span className="font-black text-white">8 elegíveis não notificados</span> têm perfil mapeado e são passíveis de inclusão retroativa, e as <span className="font-black text-white">14 notificações sob verificação</span> seguem em regularização. Trata-se de um ajuste fino de processo, com a validade da premiação já realizada plenamente preservada.
                 </p>
               </div>
             </div>
@@ -699,7 +763,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-bold mb-6">
-              <ClipboardList className="w-3.5 h-3.5" /> AUDITORIA DA JORNADA · 20 ITENS
+              <ClipboardList className="w-3.5 h-3.5" /> AUDITORIA DA JORNADA · 19 ITENS
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[40px] font-black mb-6 tracking-tight leading-tight text-slate-900">
               Correções & Melhorias <span className="text-blue-600">Aplicadas</span>
@@ -713,7 +777,7 @@ const App = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <div className="p-8 bg-rose-50 rounded-[28px] border border-rose-100">
               <p className="text-rose-600 font-bold text-[10px] uppercase mb-3 tracking-widest">Correções</p>
-              <p className="text-5xl md:text-[56px] font-black mb-2 leading-none tracking-tight text-slate-900">14</p>
+              <p className="text-5xl md:text-[56px] font-black mb-2 leading-none tracking-tight text-slate-900">13</p>
               <p className="text-rose-700 text-sm font-medium">Bugs e inconsistências que precisam ser sanados.</p>
             </div>
             <div className="p-8 bg-blue-50 rounded-[28px] border border-blue-100">

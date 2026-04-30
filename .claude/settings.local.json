@@ -7,7 +7,20 @@
       "Bash(pkill -f \"vite\")",
       "mcp__Claude_Preview__preview_start",
       "Bash(curl -s http://localhost:5173/src/index.css)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "PowerShell(if \\($env:GITHUB_TOKEN\\) { \"GITHUB_TOKEN: set \\($\\($env:GITHUB_TOKEN.Length\\) chars\\)\" } else { \"GITHUB_TOKEN: empty\" }; if \\($env:GH_TOKEN\\) { \"GH_TOKEN: set\" } else { \"GH_TOKEN: empty\" })",
+      "Bash(git -C \"C:/Projects/apresentacao-executiva\" status)",
+      "Bash(git -C \"C:/Projects/apresentacao-executiva\" log --oneline -5)",
+      "Bash(git -C \"C:/Projects/apresentacao-executiva\" branch)",
+      "Bash(git -C \"C:/Projects/apresentacao-executiva\" log e998b8c --oneline -1)",
+      "Bash(git -C \"C:/Projects/apresentacao-executiva\" show e998b8c --stat)",
+      "Bash(git -C \"C:/Projects/apresentacao-executiva\" log claude/stoic-maxwell-f00620 --oneline -3)",
+      "Bash(git -C \"C:/Projects/apresentacao-executiva\" diff main claude/stoic-maxwell-f00620 --stat)",
+      "Bash(git -C \"C:/Projects/apresentacao-executiva\" merge claude/stoic-maxwell-f00620 --no-edit)",
+      "Bash(git -C \"C:/Projects/apresentacao-executiva\" show HEAD:src/App.tsx)",
+      "Bash(python3 -c ' *)",
+      "Bash(python -c ' *)",
+      "Bash(pip install *)"
     ]
   }
 }
