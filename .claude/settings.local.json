@@ -6,7 +6,8 @@
       "Bash([ -f \"C:/Projects/apresentacao-executiva/node_modules/lucide-react/dist/esm/icons/$icon.mjs\" ])",
       "Bash(pkill -f \"vite\")",
       "mcp__Claude_Preview__preview_start",
-      "Bash(curl -s http://localhost:5173/src/index.css)"
+      "Bash(curl -s http://localhost:5173/src/index.css)",
+      "Bash(npx tsc *)"
     ]
   }
 }
